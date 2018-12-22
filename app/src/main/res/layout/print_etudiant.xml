@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="printEtudiant"
+            type="com.example.anes_.logmvvm.viewmodel.EtudiantModel" />
+        <variable
+            name="printEtudiantEvent"
+            type="com.example.anes_.logmvvm.commands.EtudiantCreate"/>
+
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Etudiant : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+
+                />
+            <Spinner
+                android:id="@+id/Etudiant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Nom Etudiant : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/NomEtudiant"
+                android:inputType="text"
+                android:hint="Nom Enseignant"
+                android:text="@{printEtudiant.nomE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Prenom Etudiant : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/PrenomEtudiant"
+                android:inputType="text"
+                android:hint="Prenom Enseignant"
+                android:text="@{printEtudiant.prenomE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/Etudiant_CREATION"
+                android:text="PRINT"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->printEtudiantEvent.onClickPrint()}"
+                />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/Etudiant_PRINT_NOTES"
+                android:text="PRINT NOTE"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->printEtudiantEvent.onClickPrintNote()}"
+                />
+
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/Etudiant_DELETE"
+                android:text="DELETE"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->printEtudiantEvent.onClickDelete()}"
+                />
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/Etudiant_UPDATE"
+                android:text="UPDATE"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->printEtudiantEvent.onClickUpdate()}"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</layout>

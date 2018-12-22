@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="createEnseignant"
+            type="com.example.anes_.logmvvm.viewmodel.EnseignantModel" />
+        <variable
+            name="createEnseignantEvent"
+            type="com.example.anes_.logmvvm.commands.EnseignantCreate"/>
+
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Num Enseignant : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/NumEnseignant"
+                android:inputType="numberDecimal"
+                android:hint="Num Enseignant"
+                android:text="@{createEnseignant.numE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Nom Enseignant : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/NomEnseignant"
+                android:inputType="text"
+                android:hint="Nom Enseignant"
+                android:text="@{createEnseignant.nomE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Prenom Enseignant : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/PrenomEnseignant"
+                android:inputType="text"
+                android:hint="Prenom Enseignant"
+                android:text="@{createEnseignant.prenomE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Grade Enseignant: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/GradeEnseignant"
+                android:inputType="text"
+                android:hint="Grade Enseignant"
+                android:text="@{createEnseignant.grade}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Cours : "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+
+            <Spinner
+                android:id="@+id/Cours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Salle: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+                />
+            <Spinner
+                android:id="@+id/Salle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/Enseignant_CREATION"
+            android:text="CREATE"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->createEnseignantEvent.onClickCreate()}"
+            />
+
+    </RelativeLayout>
+</layout>

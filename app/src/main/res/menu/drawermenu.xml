@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+<item android:id="@+id/P_Enseignant_CREATE" android:title="Ajouter Enseignant"/>
+    <item android:id="@+id/P_Enseignant_PRINT" android:title="Afficher Enseignant"/>
+    <item android:id="@+id/P_Etudiant_CREATE" android:title="Ajouter Etudiant"/>
+    <item android:id="@+id/P_Etudiant_PRINT" android:title="Afficher Etudiant"/>
+    <item android:id="@+id/P_Cour_CREATE" android:title="Ajouter Cours"/>
+    <item android:id="@+id/P_Salle_CREATE" android:title="Ajouter Salle"/>
+    <item android:id="@+id/P_Departement_CREATE" android:title="Ajouter Departement"/>
+</menu>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="createEtudiant"
+            type="com.example.anes_.logmvvm.viewmodel.EtudiantModel" />
+        <variable
+            name="createNoteEtudiant"
+            type="com.example.anes_.logmvvm.viewmodel.NoteModel" />
+        <variable
+            name="createEtudiantEvent"
+            type="com.example.anes_.logmvvm.commands.EtudiantCreate"/>
+
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Num Etudiant: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/NumEtudiant"
+                android:inputType="numberDecimal"
+                android:hint="Num Etudiant"
+                android:text="@{createEtudiant.numE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Nom Etudiant: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/NomEtudiant"
+                android:inputType="text"
+                android:hint="Nom Etudiant"
+                android:text="@{createEtudiant.nomE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Nom Etudiant: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/PrenomEtudiant"
+                android:inputType="text"
+                android:hint="Prenom Etudiant"
+                android:text="@{createEtudiant.prenomE}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Cours: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <Spinner
+                android:id="@+id/Cours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Note: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/NoteEtudiant"
+                android:inputType="numberDecimal"
+                android:hint="Note Etudiant"
+                android:text="@{createNoteEtudiant.note}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/NoteEtudiant_CREATION"
+                android:text="CREATE NOTE"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->createEtudiantEvent.onClickNoteCreate()}"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:text="Notes de l'Etudiant"
+                android:gravity="center"/>
+
+            <TableLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/NOTES_ETUDIANT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/table_row1"
+                    >
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:fontFamily="serif"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="50px"
+                        android:textColor="#000"
+                        android:text="Etudiant"/>
+                    <TextView
+                        android:id="@+id/age"
+                        android:textColor="#000"
+                        android:fontFamily="serif"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="50px"
+                        android:text="Cour"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:id="@+id/position"
+                        android:fontFamily="serif"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="50px"
+                        android:text="Note"/>
+
+
+                </TableRow>
+                <View
+                    android:layout_height="3dip"
+                    android:layout_width="match_parent"
+                    android:background="#ff0000"/>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/Etudiant_CREATION"
+            android:text="CREATE"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->createEtudiantEvent.onClickCreate()}"
+            />
+
+    </RelativeLayout>
+</layout>

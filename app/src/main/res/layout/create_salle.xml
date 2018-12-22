@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="createSalle"
+            type="com.example.anes_.logmvvm.viewmodel.SalleModel" />
+        <variable
+            name="createSalleEvent"
+            type="com.example.anes_.logmvvm.commands.SalleCreate"/>
+
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" Numero de salle: "
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/NumDeSalle"
+                android:inputType="numberDecimal"
+                android:hint="Numero de salle"
+                android:text="@{createSalle.numSalle}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Capacite"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/CapaciteSalle"
+                android:inputType="text"
+                android:hint="Capacite de la salle"
+                android:text="@{createSalle.capacite}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/Salle_CREATION"
+            android:text="CREATE"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->createSalleEvent.onClickCreate()}"
+            />
+
+    </RelativeLayout>
+</layout>

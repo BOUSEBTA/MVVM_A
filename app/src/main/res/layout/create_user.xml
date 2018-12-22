@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="create"
+            type="com.example.anes_.logmvvm.viewmodel.UserModel" />
+        <variable
+            name="createEvent"
+            type="com.example.anes_.logmvvm.commands.UserLogin"/>
+
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/email1"
+                android:inputType="textEmailAddress"
+                android:hint="email"
+                android:text="@{create.email}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+            <EditText
+                android:id="@+id/password1"
+                android:inputType="textPassword"
+                android:hint="password"
+                android:text="@{create.password}"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+
+                />
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/createU"
+            android:text="CREATE"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->createEvent.onClickCreate()}"
+            />
+
+    </RelativeLayout>
+</layout>
+
+
